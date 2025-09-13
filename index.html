@@ -7,34 +7,19 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <main class="container">
-      <!-- Enlace de descarga (arriba, alineado a la izquierda) -->
-      <a class="apk-link" href="https://mega.nz/file/T0BmBYZS#sgclLZuvufuRtSmLI2kYss3yQ6a9QDRvGFH_EiYr9Vk">
-        Descargar APK (enlace rápido)
+    <!-- Contenedor a pantalla completa -->
+    <section class="video-fullscreen">
+      <iframe
+        src="https://player.vimeo.com/video/1087447666?h=af599ee21a&autoplay=1&muted=1&playsinline=1"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+
+      <!-- Botón superpuesto -->
+      <a class="download-btn" href="https://mega.nz/file/T0BmBYZS#sgclLZuvufuRtSmLI2kYss3yQ6a9QDRvGFH_EiYr9Vk">
+        Descargar APK
       </a>
-
-      <!-- Video (Vimeo) en el centro visual -->
-      <section class="video-section" aria-label="Video demostración">
-        <div class="video-wrapper">
-          <iframe
-            title="vimeo-player"
-            src="https://player.vimeo.com/video/1087447666?h=af599ee21a"
-            width="800"
-            height="750"
-            frameborder="0"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </section>
-
-      <!-- Botón grande al final, alineado a la izquierda -->
-      <div class="download-footer">
-        <a class="download-btn" href="https://mega.nz/file/T0BmBYZS#sgclLZuvufuRtSmLI2kYss3yQ6a9QDRvGFH_EiYr9Vk">
-          Descargar APK
-        </a>
-      </div>
-    </main>
+    </section>
   </body>
 </html>

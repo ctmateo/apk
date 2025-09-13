@@ -1,102 +1,44 @@
-/* MOBILE FIRST - styles.css */
-:root{
-  --btn-bg: #ceff00;
-  --btn-text: #000;
-  --container-padding: 16px;
-  --max-width: 480px;
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-}
-
-*{box-sizing: border-box}
-html,body{
-  height:100%;
-  margin:0;
-  font-family: var(--font-family);
-  background:#fff;
-  color:#111;
-}
-
-.container{
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--container-padding);
-  text-align: left; /* TODO: todo alineado a la izquierda */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Enlace pequeño arriba */
-.apk-link{
-  display:inline-block;
-  margin-bottom: 12px;
-  text-decoration: underline;
-  color: inherit;
-  font-weight:600;
-  font-size: 0.95rem;
-}
-
-/* Sección de video - lo centramos dentro de su contenedor */
-.video-section {
-  flex: 1;                /* que ocupe el espacio disponible */
-  display: flex;
-  justify-content: center;
-  align-items: center;    /* centra verticalmente */
-  margin: 0;              /* elimina márgenes extra */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   width: 100%;
+  overflow: hidden; /* evita scroll */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-.video-wrapper {
+/* Contenedor a pantalla completa */
+.video-fullscreen {
+  position: relative;
   width: 100%;
-  height: 70vh;          /* que ocupe toda la altura de la pantalla */
-  max-width: none;        /* sin limitar ancho */
-  aspect-ratio: unset;    /* quitar la restricción 16:9 */
-  background: #000;
-  border-radius: 0;       /* opcional: quitar esquinas redondeadas */
+  height: 100vh;
   overflow: hidden;
 }
 
-.video-wrapper iframe {
+/* El iframe ocupa toda la pantalla */
+.video-fullscreen iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: 0;
-  display: block;
+  object-fit: cover;
 }
 
-
-.download-footer{
-  margin-top: 20px; /* Espacio pequeño debajo del video */
-}
-
-/* Botón grande alineado a la izquierda */
-.download-btn{
-  display:inline-block;
-  background: var(--btn-bg);
-  color: var(--btn-text);
+/* Botón superpuesto encima del video */
+.download-btn {
+  position: absolute;
+  bottom: 40px; /* separa del borde inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ceff00;
+  color: #000;
   text-decoration: none;
-  padding: 14px 18px;
-  border-radius: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-  border: 1px solid rgba(0,0,0,0.06);
-  font-size: 1rem;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  border: 1px solid rgba(0,0,0,0.15);
 }
-
-/* Asegurar que el botón no se expanda demasiado en pantallas pequeñas */
-@media (max-width: 360px){
-  .video-wrapper{ max-width: 100%; }
-  .download-btn{ padding: 12px 14px; font-size: 0.95rem; }
-}
-
-/* Si quieres que el botón ocupe todo el ancho en pantallas muy pequeñas,
-   descomenta la regla siguiente */
-/*
-@media (max-width:420px){
-  .download-btn{
-    display:block;
-    width:100%;
-    text-align:center;
-  }
-}
-*/
