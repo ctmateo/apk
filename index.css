@@ -64,9 +64,8 @@ html,body{
   display:block;
 }
 
-/* Footer con botón */
 .download-footer{
-  margin-top: auto; /* empuja el footer al fondo si hay espacio */
+  margin-top: 20px; /* Espacio pequeño debajo del video */
 }
 
 /* Botón grande alineado a la izquierda */
